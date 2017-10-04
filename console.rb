@@ -1,4 +1,5 @@
 require("pry")
+
 require_relative("models/artist")
 require_relative("models/album")
 
@@ -15,37 +16,21 @@ artist2.save()
 artist3 = Artist.new({'name' => "Of Monsters And Men"})
 artist3.save()
 
+
 album1 = Album.new({
-  'artists_id' => artist1.id,
-  'title' => "The Devil and God are Raging Inside Me",
-  'genre' => "A"
-
-  })
-album1.save()
-
-album2 = Album.new({
   'artists_id' => artist1.id,
   'title' => "Science Fiction",
   'genre' => "A"
 
   })
-album2.save()
 
-album3 = Album.new({
-  'artists_id' => artist2.id,
-  'title' => "Beggars",
-  'genre' => "A"
+  album1.save()
 
-  })
-album3.save()
+  # album1.title = "Change album name"
+  # album1.update_album()
 
-album4 = Album.new({
-  'artists_id' => artist3.id,
-  'title' => "Beneath The Skin",
-  'genre' => "A"
+artist3.name = "A new name"
+artist3.update_artist()
 
-  })
-album4.save()
-
-binding.pry
-nil
+  binding.pry
+  nil

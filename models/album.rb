@@ -1,12 +1,17 @@
 require('pg')
 
 require_relative '../db/sql_runner'
+require_relative 'artist'
+
 
 
 class Album
 
+  attr_accessor :title, :genre
+
+
   def initialize(options)
-    @id = options['id'].to_i()
+    @id = options['id'].to_i() if options['id']
     @artists_id = options['artists_id'].to_i()
     @title = options['title']
     @genre = options['genre']
@@ -47,6 +52,13 @@ class Album
     values = [@artists_id]
     results = SqlRunner.run(sql, "get_arist", values)
     return results.map { |artist| Artist.new(artist) }
+  end
+
+  def update_album()
+    sql = "UPDATE albums SET (artists_id, title, genre) = ($1, $2, $3)
+    WHERE id = $4"
+    values = [@artists_id, @title, @genre, @id]
+    SqlRunner.run(sql, "update_album", values)
   end
 
 
