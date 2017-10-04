@@ -8,6 +8,7 @@ require_relative 'artist'
 class Album
 
   attr_accessor :title, :genre
+  attr_reader :id
 
 
   def initialize(options)
@@ -66,6 +67,13 @@ class Album
     values = [@id]
     SqlRunner.run(sql, "delete_album", values)
   end
+
+  def self.find(id)
+  sql = "SELECT * FROM albums WHERE id = $1"
+  values = [id]
+  results = SqlRunner.run(sql, "find_album", values)
+  return results.map {|album| Album.new(album)}
+end
 
 
 end

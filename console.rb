@@ -20,11 +20,41 @@ artist3.save()
 album1 = Album.new({
   'artists_id' => artist1.id,
   'title' => "Science Fiction",
-  'genre' => "A"
+  'genre' => "Alt Rock"
 
   })
 
   album1.save()
+
+  album2 = Album.new({
+    'artists_id' => artist1.id,
+    'title' => "Daisy",
+    'genre' => "Alt Rock"
+
+    })
+
+    album2.save()
+
+    album3 = Album.new({
+      'artists_id' => artist2.id,
+      'title' => "Vheissu",
+      'genre' => "Alt Rock"
+
+      })
+
+      album3.save()
+
+      album4 = Album.new({
+        'artists_id' => artist3.id,
+        'title' => "Beneath the Skin",
+        'genre' => "Folk Rock"
+
+        })
+
+        album4.save()
+
+
+
 
   # album1.title = "Change album name"
   # album1.update_album()
@@ -34,7 +64,7 @@ album1 = Album.new({
 
 # artist3.delete_artist()
 
-# album1.delete_album()
+
 
   binding.pry
   nil
