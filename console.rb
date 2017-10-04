@@ -17,7 +17,7 @@ artist3.save()
 
 album1 = Album.new({
   'artists_id' => artist1.id,
-  'title' => "The Devil and God",
+  'title' => "The Devil and God are Raging Inside Me",
   'genre' => "A"
 
   })
@@ -30,3 +30,22 @@ album2 = Album.new({
 
   })
 album2.save()
+
+album3 = Album.new({
+  'artists_id' => artist2.id,
+  'title' => "Beggars",
+  'genre' => "A"
+
+  })
+album3.save()
+
+album4 = Album.new({
+  'artists_id' => artist3.id,
+  'title' => "Beneath The Skin",
+  'genre' => "A"
+
+  })
+album4.save()
+
+binding.pry
+nil

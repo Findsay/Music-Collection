@@ -32,5 +32,12 @@ class Artist
     SqlRunner.run(sql, "delete_all_artists", values)
   end
 
+  def self.list_all()
+    sql = "SELECT * FROM artists"
+    values = []
+    results = SqlRunner.run(sql, "list_all", values)
+    return results.map { |artist| Artist.new(artist) }
+  end
+
 
 end

@@ -33,8 +33,13 @@ class Album
     sql = "DELETE FROM albums"
     values = []
     SqlRunner.run(sql, "delete_all_albums", values)
+  end
 
-
+  def self.list_all()
+    sql = "SELECT * FROM albums"
+    values = []
+    results = SqlRunner.run(sql, "list_all", values)
+    return results.map { |album| Album.new(album) }
   end
 
 
