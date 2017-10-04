@@ -29,8 +29,12 @@ album1 = Album.new({
   # album1.title = "Change album name"
   # album1.update_album()
 
-artist3.name = "A new name"
-artist3.update_artist()
+# artist3.name = "A new name"
+# artist3.update_artist()
+
+# artist3.delete_artist()
+
+# album1.delete_album()
 
   binding.pry
   nil
